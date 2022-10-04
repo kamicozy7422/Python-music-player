@@ -5,6 +5,7 @@ from tkinter.filedialog import askopenfile
 from PIL import Image, ImageTk
 import os
 
+# Starting Tkinter
 win = Tk()
 win.geometry('300x200')
 win.title('Music Player')
@@ -16,11 +17,13 @@ win.configure(background='violet')
 pygame.init()
 pygame.mixer.init()
 
+# Opening Music Player Function
 def Open_Music():
     global file
     file = askopenfile(mode='r')
     Play_Music()
 
+# Playing Music Function
 def Play_Music():
     global sound
     sound = True
@@ -30,6 +33,7 @@ def Play_Music():
     l1 = Label(text='Music Playing:\n' + os.path.basename(file.name))
     l1.place(anchor=CENTER, relx=0.5, rely=0.4)
 
+# Function for pausing music
 def Pause_Music():
     global sound
     if sound == True:
@@ -40,6 +44,7 @@ def Pause_Music():
         pygame.mixer.music.unpause()
         sound = True
 
+# Stopping Music
 def Stop_Music():
     pygame.mixer.music.stop()
 
