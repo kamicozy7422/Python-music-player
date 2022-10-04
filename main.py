@@ -7,11 +7,11 @@ import os
 
 # Starting Tkinter
 win = Tk()
-win.geometry('300x200')
+win.geometry('600x400')
 win.title('Music Player')
 win.minsize(300, 200)
 win.maxsize(300, 200)
-win.configure(background='violet')
+win.configure(background='blue')
 
 
 pygame.init()
